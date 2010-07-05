@@ -1,0 +1,18 @@
+{
+  "usage": "
+Run this (you can grep for cURL lower-cased and paste into the prompt):
+curl -X POST -H 'Content-Type: application/json' localhost:5984/dav/ --data-binary @misc/enable_dav.txt
+curl localhost:5984/dav/_design/enable_dav/_show/add_atoms
+",
+
+  "_id": "_design/enable_dav",
+  "language": "erlang",
+  "shows": {
+    "add_atoms": "fun(Doc, {Req}) ->
+                    'PROPFIND', 'PROPPATCH', 'MKCOL', 'COPY', 'MOVE', 'LOCK', 'UNLOCK',
+                    {[{<<\"body\">>, <<\"WebDAV enabled\\n\">>}]}
+                  end."
+   },
+
+   "comment":""
+}
