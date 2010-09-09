@@ -1,6 +1,9 @@
 [ { "from": "favicon.ico"
   , "to": "images/favicon.ico"
   }
+, { "from": ""
+  , "to"  : "_show/jason/"
+  }
 , { "from": "*"
   , "to"  : "_show/jason/*"
   }
